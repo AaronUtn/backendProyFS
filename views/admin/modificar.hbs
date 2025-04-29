@@ -1,0 +1,50 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<h1>proximamente va estar el modificar</h1>
+
+<div class="contanier" style="margin: 50px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar la novedad</h4>
+            <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                <input type="hidden" value="{{novedad.id}}" name="id">
+                <div id="idHelp" class="form-text">El campo id no puede estar vacio</div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Titulo" value="{{novedad.titulo}}" class="form-control"
+                        name="titulo">
+                    <div id="TituloHelp" class="form-text">El campo titulo no puede estar vacio</div>
+
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="Subtitulo" class="form-control"
+                        name="subtitulo">{{novedad.subtitulo}}</textarea>
+                    <div id="subtituloHelp" class="form-text">El campo subtitulo no puede estar vacio</div>
+                </div>
+
+                <div class="form-group">
+                    <p>
+                        <label>Imagen: <input type="file" name="imagen" id="imagen" /> </label>
+                    </p>
+                    <p>
+                        <label><input type="checkbox"   name="img_delete" id="img_delete" value="1" />
+                                Eliminar imagen actual? <br></label>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="Cuerpo" class="form-control" name="cuerpo">{{novedad.cuerpo}}</textarea>
+                    <div id="cuerpoHelp" class="form-text">El campo cuerpo no puede estar vacio</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+            {{#if error}}
+                <h5>{{message}}</h5>
+            {{/if}}
+        </div>
+
+    </div>
+
+</div>

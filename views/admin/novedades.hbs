@@ -1,0 +1,60 @@
+<div class="container" style="margin:100px auto">
+
+    <div class="prueba">
+        {{!--fila 1--}}
+        <div class="row">
+            <div class="col">
+                <p class="text-left">Bienvenido, {{usuario}} ! </p>
+            </div>
+            <div class="col text-end">
+                <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión
+                    <i class="fas fa-sign-out-alt"></i> </a>
+            </div>
+        </div>
+
+
+        {{!-- fin fila 1--}}
+        {{!--fila 2--}}
+        <div class="row">
+            <div class="col-7">
+                <h3>Listado de novedades</h3>
+            </div>
+            <div class="col-5 text-end">
+                <a class="btn btn-success" href="/admin/novedades/agregar"><i class="fa fa-plus" aria-hidden="true"></i>Nuevo</a>
+            </div>
+        </div>
+        {{!--fin fila 2--}}
+        {{!--fila 3--}}
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr class="table-dark">
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="text-end">Acciones</th> {{!--text-end--}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each novedades}}
+                        <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{titulo}}</td>
+                            <td>{{{imagen}}}</td>
+                            <td class="col-3 text-end">
+                                <a class="btn btn-secundary" href="/admin/novedades/modificar/{{id}}" title="Editar">
+                                    <i class="fa fa-pencil" aria_hidden="true"></i></a>
+                                <a class="btn btn secondary" href="/admin/novedades/eliminar/{{id}}" title="Eliminar"><i class="fa fa-trash"
+                                        aria-hidden="true"></i></a>
+
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{!--fin fila 3--}}
+    </div>
+</div>

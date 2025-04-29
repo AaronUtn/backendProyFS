@@ -1,0 +1,19 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<h1>proximamente va estar el login</h1>
+<div>
+    <form action="/admin/login" method="post">
+        <div class="mb-3">
+            <label for="exampleInputUsuario" class="form-label">Usuario Administrativo</label>
+            <input type="usuario" class="form-control" id="inputUsuario" aria-describedby="usuarioHelp" name="usuario">
+            <div id="usuarioHelp" class="form-text">No compartas tu usuario y contraseña con nadie</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+        {{#if error}}
+            <p class="usuarioOcontrasnIncorrecta">Usuario o clave incorrectas.</p>
+        {{/if}}
+</div>
