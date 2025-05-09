@@ -8,7 +8,7 @@ var md5 = require("md5");
 async function getUserByUsernameAndPassword(user, password) {
   try {
     // Esperamos a que el pool esté conectado, usando el poolconnect de bd.js que ya lo espera
-    //lo cambie por que me tira error y no me deja logear a un usuario que si se encuntra en la base de datos
+    //lo cambie por que me tira error y no me deja logear a un usuario que si se encuentra en la base de datos
     //await poolConnect;
     const pool = await connectDB();
     const hashedPassword = crypto
